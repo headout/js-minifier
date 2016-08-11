@@ -6,8 +6,8 @@ buildscript {
 
 ext {
     // Java version
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 
     tomcatVersion = '8.0.23'
 
@@ -16,12 +16,8 @@ ext {
 ext.deps = [
         guava                   : 'com.google.guava:guava:19.0',
         jsClosureCompiler       : 'com.google.javascript:closure-compiler:r2388',
-        tomcat                  : "org.apache.tomcat:tomcat-catalina:$tomcatVersion",
-        tomcatDbcp              : "org.apache.tomcat:tomcat-dbcp:$tomcatVersion",
-        javaxMail               : 'com.sun.mail:javax.mail:1.5.0',
         jspApi                  : 'javax.servlet.jsp:jsp-api:2.1',
-        jstl                    : 'jstl:jstl:1.2',
-        mysqlConnector          : 'mysql:mysql-connector-java:5.1.35'
+        servletApi              : 'javax.servlet:javax.servlet-api:3.1.0'
 ]
 
 allprojects {

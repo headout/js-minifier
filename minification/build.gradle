@@ -9,12 +9,8 @@ configurations {
 }
 
 dependencies {
-    provided deps.tomcat
-    provided deps.tomcatDbcp
     provided deps.jspApi
+    provided deps.servletApi
     provided deps.guava
     provided deps.jsClosureCompiler
-    provided deps.mysqlConnector
-    provided deps.jstl
-    provided deps.javaxMail
 }
