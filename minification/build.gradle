@@ -16,8 +16,8 @@ dependencies {
 }
 
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'minifications'
+    bintrayRepo = 'headout-java'
+    bintrayName = 'minification'
     orgName = 'headout'
 
     publishedGroupId = 'com.headout.web'
