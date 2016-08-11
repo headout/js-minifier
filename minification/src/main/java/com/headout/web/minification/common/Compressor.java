@@ -66,7 +66,7 @@ public class Compressor {
 	 *
 	 * @param path filepath
 	 * @return filecontent in string format
-	 * @throws IOException
+	 * @throws IOException throws an exception when reading from file fails
 	 */
 	public static String getExternalCode(String path) throws IOException {
 		byte[] encoded = Files.readAllBytes(Paths.get(path));
@@ -125,7 +125,10 @@ public class Compressor {
 	 * content and then updated cache content is set for a minified content to be returned.
 	 *
 	 * @param absolutepath its path of JSP file if its
-	 * @param isInline
+	 * @param bodyContent the body content
+	 * @param contentType the type of content
+	 * @param jspID the jsp id
+	 * @param isInline tells if its inline
 	 */
 	public void minify(String absolutepath, BodyContent bodyContent, String jspID, Boolean isInline,
 			ContentType contentType) {
@@ -189,8 +192,8 @@ public class Compressor {
 	 * This function is used for minifying Inline JS code for non-production environment. This function compiles JS each
 	 * and every time request is processed. No caching is done.
 	 *
+	 * @param bodyContent the body content
 	 * @param key String representing unique key
-	 * @return returns minified JS code in string format
 	 */
 	public void minifyOnFly(BodyContent bodyContent, String key) {
 		String beforeMinified = bodyContent.getString();

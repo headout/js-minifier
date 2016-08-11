@@ -34,10 +34,8 @@ public class CacheKey {
 	}
 
 	/**
-	 * returns CacheKey instance corresponding to the given input key
-	 *
-	 * @param key
-	 * @return
+	 * @param key key for which CacheKey is required
+	 * @return CacheKey instance corresponding to the given input key
 	 */
 	public static CacheKey getInstance(String key) {
 		CacheKey keyInstance = keyInstanceMap.get(key);

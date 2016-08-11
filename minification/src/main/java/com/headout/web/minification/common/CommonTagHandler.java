@@ -85,6 +85,8 @@ public class CommonTagHandler extends BodyTagSupport implements JspIdConsumer, D
 	 * non-production environment only),and throw runtime exception.
 	 *
 	 * @param out JspWriter ,where we have to write alert message if errors occurred.
+	 * @param tag enum which tells what tag it is
+	 * @param isInline compress inline or not
 	 */
 	protected void throwExceptionIfErrors(JspWriter out, Tag tag, boolean isInline) {
 		if (compressor.errors != null && compressor.errors.length != 0) {
@@ -106,11 +108,11 @@ public class CommonTagHandler extends BodyTagSupport implements JspIdConsumer, D
 	}
 
 	/**
-	 * This function is used for writing bodyContent to JspWriter
-	 *
-	 * @param out JspWriter
-	 * @param afterMinified String which holds minified JS/CSS code
-	 */
+	 * The function is used to write body content
+	 * @param out the JspWriter to be used
+	 * @param tag enum which tells which tag it is
+     * @param bc the body content to be written
+     */
 	protected void writeBodyToJspWriter(JspWriter out, Tag tag, BodyContent bc) {
 		writeToJspWriter(out, tag, bc == null ? null : bc.getString());
 	}
