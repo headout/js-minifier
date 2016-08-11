@@ -14,3 +14,34 @@ dependencies {
     provided deps.guava
     provided deps.jsClosureCompiler
 }
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'minifications'
+    orgName = 'headout'
+
+    publishedGroupId = 'com.headout.web'
+    libraryName = 'Minification'
+    artifact = 'minification'
+
+    libraryDescription = 'Java library to minify js'
+
+    siteUrl = 'https://github.com/headout/js-minifier'
+    gitUrl = 'https://github.com/headout/js-minifier.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'headout'
+    developerName = 'Headout'
+    developerEmail = 'tech@headout.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
+if (project.rootProject.file('local.properties').exists()) {
+    apply from: rootProject.file('gradle/install-v1.gradle')
+    apply from: rootProject.file('gradle/bintray-java-v1.gradle')
+}
